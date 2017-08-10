@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="关键词1，关键词2">
+        <meta name="description" content="描述">
+		<title>canvas雨滴</title>
+		<style type='text/css'>
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			body,html{
+				height: 100%;
+			}
+			#canvas{
+				display:block;
+				width: 100%;
+				height: 100%;
+				background:#000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas">您的浏览器不支持canvas标签</canvas>
+		<script type="text/javascript">
+			var can=document.getElementById('canvas');
+			var w=can.width=window.innerWidth;
+			var h=can.height=window.innerHeight;
+			var count=10;
+			var drops=[];
+			window.onresize=function(){
+				w=can.width=window.innerWidth;
+			    h=can.height=window.innerHeight;
+			}
+			var cxt=can.getContext('2d');
+			cxt.fillStyle='bluesky'; 
+			 /*cxt.fillRect(100,100,50,50);
+			 cxt.arc(200,200,50,0,Math.PI*2,false);
+			 cxt.fill();
+			 cxt.strokeStyle='#fff';
+			 cxt.stroke();*/
+			/*var y=0;
+			setInterval(function(){
+				cxt.clearRect(0,0,w,h);
+				y++;
+				cxt.fillRect(100,y,50,50);
+			});*/
+			
+		   function Drop(){}			
+			Drop.prototype={
+				init:function(){
+					this.x=random(0,w);
+					this.y=0;
+					this.vy=random(4,5);
+					this.l=random(h*0.8,h*0.9);
+					this.r=1;
+					this.vr=1;
+					this.a=1;
+					this.va=0.96;
+				},
+				draw:function(){
+					if(this.y>this.l){
+					 cxt.beginPath();
+					cxt.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+					 cxt.strokeStyle='rgba(0,255,255,'+this.a+')';
+					 cxt.stroke();
+					}else{
+					cxt.fillStyle='yellowgreen';
+					cxt.fillRect(this.x,this.y,2,10);
+					}
+					this.update();
+				},
+				update:function(){
+					if(this.y < this.l){
+                           this.y+=this.vy;
+					}else{
+						if(this.a>0.03){
+							this.r+=this.vr;
+							if(this.r>50){
+								this.a*=this.va;
+							}
+						}
+						else{
+							this.init();
+						}
+					}
+				}
+			}
+			/*var drop=new Drop();
+            drop.init();
+            setInterval(function(){
+            	drop.draw();
+            },100);*/
+//          drop.draw();
+            for(var i=0;i<count;i++){
+            	(function(j){
+            	setTimeout(function(){
+                var drop=new Drop();
+            	drop.init();
+            	drops.push(drop);
+            	},j*200);
+            	}(i))
+            }
+            	
+            function move(){
+            	cxt.fillStyle='rgba(0,0,0,0.1)';
+            	cxt.fillRect(0,0,w,h);
+            for(var i=0; i<drops.length; i++){
+            	drops[i].draw();
+            }
+           requestAnimationFrame(move);
+        }
+            move();
+            
+			function random(min,max){
+				return Math.random()*(max-min)+min;
+			}
+		</script>
+	</body>
+</html>
