@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    @keyframes yun {
+        from{
+           transform:translateX(-20px) ;
+        }
+        to{
+            transform:translateX(20px);
+        }
+    }
+    body{
+        background-image:url(images/3.0.png) ;
+        background-size:cover;
+    }
+
+    .begin{
+        width:300px;
+        height:80px;
+        background: darkred;
+        border:3px solid greenyellow;
+        border-radius: 50px;
+        position: absolute;
+        top:0px;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        margin:auto;
+        font-size:30px;
+        font-weight: bold;
+        text-align: center;
+        line-height:80px;
+        color: black;
+    }
+    .storm{
+        width:900px;
+        height:100px;
+        background-image:url(images/yun.jpg) ;
+        background-size:contain;
+        position: absolute;
+        left:50%;
+        margin-left:-500px;
+        z-index: 3333;
+        animation:yun 2s ease-in-out infinite alternate;
+    }
+    .word,.word1,.word2{
+        font-size: 20px;
+        color:#fff;
+    }
+    .sm{
+        width:80px;
+        height:10px;
+        border-radius:3px;
+        background: #c40000;
+        display:inline-block;
+        position: relative;
+    }
+    .sm1{
+        width:80px;
+        height:10px;
+        border-radius:3px;
+        background: #850000;
+        display:inline-block;
+        position:absolute;
+        top：0px;
+    }
+</style>
+<body>
+<div class="begin">GAME BEGIN</div>
+<div class="storm"></div>
+<div class="box">
+    <div class="word">生命 <span class="sm"><span class="sm1"></span> </span> </div>
+    <div class="word1">得分 <span class="score">0</span> </div>
+    <div class="word2">关卡 <span class="gql">1</span></div>
+</div>
+</body>
+</html>
+<script src="js/game.js"></script>
+<!--<script></script>-->
