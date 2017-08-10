@@ -15,7 +15,7 @@ audio{
 .music{
     width:1010px;
     height:630px;
-    background-image:url(/musicplay/images/yintian.png);
+    background-image:url(../images/yintian.png);
     background-size: cover;
     background-position:center;
     margin:auto;
