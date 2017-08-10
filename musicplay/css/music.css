@@ -1,0 +1,154 @@
+*{
+    margin:0px;
+    padding:0px;
+    list-style: none;
+    font-family: "微软雅黑";
+}
+body,html{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+audio{
+    display:none;
+}
+.music{
+    width:1010px;
+    height:630px;
+    background-image:url(../img/yintian.png);
+    background-size: cover;
+    background-position:center;
+    margin:auto;
+    margin-top:10px;
+}
+.top{
+    height:530px;
+    overflow: hidden;
+    text-align: center;
+    padding-top:30px;
+}
+.top>.song{
+    font-size: 30px;
+    color: darkgreen;
+    padding-bottom:20px;
+}
+.top>.author{
+    font-size: 28px;
+    color:darkgreen;
+}
+.top>.lyrics>li{
+    padding:15px 0px;
+    color:darkgreen;
+}
+.bottom{
+    width:100%;
+    height:70px;
+    background: rgba(0,0,0,0.8);
+}
+.left{
+    width:200px;
+    height:100%;
+    float:left;
+}
+.iconfont{
+    line-height: 70px;
+    padding-left:20px;
+}
+.icon-houtui1:before {
+    font-size: 30px;
+    color:#fff;
+}
+.icon-bofang:before {
+    font-size: 40px;
+    color:#fff;
+}
+.icon-qianjin:before {
+    font-size: 30px;
+    color:#fff;
+}
+.icon-iconfontzanting:before {
+    font-size: 30px;
+    color:#fff;
+}
+.midle{
+    width:610px;
+    height:100%;
+    float: left;
+}
+.midle>img{
+    width:60px;
+    height:70px;
+}
+.pro{
+    width:550px;
+    height:100%;
+    float:right;
+    position:relative;
+}
+.info{
+    display:block;
+    font-size:14px;
+    color:black;
+    padding-top:8px;
+    padding-left:20px;
+}
+.time{
+    width:150px;
+    height:20px;
+    float:right;
+    position:absolute;
+    right:0px;
+    top:10px;
+}
+.pror{
+    width:530px;
+    height:2px;
+    background: lightpink;
+    margin:20px auto;
+    position:relative;
+}
+.prorl{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background:darkgreen;
+    position:absolute;
+    top:-4px;
+    left:0px;
+}
+.right{
+    width:200px;
+    height:100%;
+    float: right;
+    position: relative;
+}
+.icon-yinliang:before {
+    font-size: 30px;
+    color:#fff;
+    margin-left:50px;
+}
+.volumew{
+    width:5px;
+    height:100px;
+    background:grey;
+    position: absolute;
+    bottom:55px;
+    right:110px;
+}
+.volumel{
+    width:5px;
+    height:50px;
+    background: #000;
+    position: relative;
+}
+.volumebtn{
+    width:12px;
+    height:12px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    bottom:0px;
+    left:-2px;
+}
+
+
