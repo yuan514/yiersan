@@ -756,7 +756,7 @@ ul.portfolioContainer li .lightCon {
 }
 
 ul.portfolioContainer li img {
-    width: 25% !important;
+    width: 100% !important;
     height: 240px;
     display: block;
 }
@@ -768,12 +768,9 @@ span.hoverBox {
     position: absolute;
     left: 0px;
     bottom: 0px;
-
     transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
-
     background: rgba(76, 64, 78, 0);
-
 }
 
 ul.portfolioContainer li:hover span.hoverBox {
